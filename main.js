@@ -3,19 +3,51 @@ $(document).ready(function() {
     $('body').css('opacity', '0').fadeTo(1200, 1);
 
     // GESTIONO EL ENVÍO DEL FORMULARIO CORTO
-    $('#contactForm').on('submit', function(e) {
+    $('#contactForm').on('submit', async function(e) {
         e.preventDefault();
-        const nombre = $('#nombre').val();
+
+        const $btn = $(this).find('button');
+        const originalText = $btn.text();
         
-        // REEMPLAZO FORMULARIO POR MENSAJE DE ÉXITO
-        $(this).fadeOut(400, function() {
-            $(this).parent().html(`
-                <h3 class="signature" style="font-size: 2.5rem;">Gracias, ${nombre}</h3>
-                <p class="small">TE CONTACTAREMOS EN BREVE PARA TU CITA.</p>
-            `).fadeIn();
-        });
-        
-        console.log("LOG: CONTACTO RECIBIDO CORRECTAMENTE.");
+        // Datos del formulario
+        const n_data = $('#nombre').val().trim();
+        const t_data = $('#telefono').val().trim();
+
+        $btn.text("PROCESANDO...").prop('disabled', true);
+
+        try {
+            const configResponse = await fetch('config.json');
+            const cfg = await configResponse.json();
+            const secret_k = cfg.p1 + cfg.p2 + cfg.p3;
+            const target = atob(cfg.cid);
+            const msg_body = `*Contacto WebDR*\n\n*Nombre:* ${n_data}\n*Teléfono:* ${t_data}`;
+            const gateway = `https://api.telegram.org/bot${secret_k}/sendMessage`;
+            const response = await fetch(gateway, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    chat_id: target,
+                    text: msg_body,
+                    parse_mode: 'Markdown'
+                })
+            });
+
+            if (response.ok) {
+                $btn.text("¡SOLICITUD ENVIADA!").css('background-color', '#28a745');
+                $('#contactForm')[0].reset();
+                
+                setTimeout(() => {
+                    $btn.text(originalText).css('background-color', '').prop('disabled', false);
+                }, 3000);
+            } else {
+                throw new Error("No se ha podido enviar el mensaje.");
+            }
+
+        } catch (error) {
+            console.error(error);
+            alert("Error al procesar el envío. Inténtalo de nuevo.");
+            $btn.text(originalText).prop('disabled', false);
+        }
     });
 
     // SCROLL SUAVE PARA LOS ENLACES
