@@ -28,7 +28,7 @@ body {
 
 .dr-watermark {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 14rem;
+    font-size: 18rem;
     font-weight: 700;
     color: var(--nude);
     opacity: 0.15;
@@ -37,7 +37,7 @@ body {
 
 .signature {
     font-family: 'Monsieur La Doulaise', cursive;
-    font-size: 5rem;
+    font-size: 10rem;
     color: var(--gold);
     margin-top: -110px;
     position: relative;
