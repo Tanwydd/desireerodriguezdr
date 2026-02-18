@@ -51,7 +51,7 @@ $(document).ready(function() {
     });
 
     // SCROLL SUAVE PARA LOS ENLACES
-    $('.nav-link').on('click', function(e) {
+    $('.nav-link, .btn-contacto').on('click', function(e) {
         if (this.hash !== "") {
             e.preventDefault();
             const hash = this.hash;
