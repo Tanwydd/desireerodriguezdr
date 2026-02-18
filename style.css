@@ -10,7 +10,7 @@ body {
     font-family: 'Inter', sans-serif;
     color: var(--dark);
     background-color: var(--bg-light);
-    overflow-x: hidden; /* Evita el scroll horizontal */
+    overflow-x: hidden;
 }
 
 /* NAVBAR CUSTOM */
@@ -22,31 +22,44 @@ body {
 
 /* HERO SECTION LOGO RECREATION */
 .hero {
-    min-height: 100vh; /* min-height es mejor que height fijo para móviles */
+    height: 100vh;
     background-color: var(--bg-light);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 60px 0;
 }
 
-/* Ajuste Responsivo para el Logo Recreado */
 .dr-watermark {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 20rem; /* Reducido para base, se ajusta abajo */
+    font-size: 40rem;
     font-weight: 700;
     color: var(--nude);
     opacity: 0.15;
     line-height: 1;
+    /* Bloqueo de selección y cursor */
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: default;
 }
 
 .signature {
     font-family: 'Monsieur La Doulaise', cursive;
-    font-size: 5rem; /* Tamaño base más manejable */
+    font-size: 8rem;
     color: var(--gold);
-    margin-top: -150px; /* Reducido para evitar saltos bruscos */
+    margin-top: -400px;
     position: relative;
     z-index: 2;
+    /* Bloqueo de selección y cursor */
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: default;
+}
+
+.gold-line {
+    width: 150px;
+    height: 1px;
+    background-color: var(--gold);
+    margin: 15px auto;
 }
 
 .hero-tagline {
@@ -54,7 +67,11 @@ body {
     letter-spacing: 6px;
     font-size: 1rem;
     font-weight: 400;
-    margin-top: 2rem; /* Reducido de 10rem para que quepa en pantalla */
+    margin-top:10rem;
+    /* Bloqueo de selección y cursor */
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: default;
 }
 
 /* CARDS DE SERVICIOS */
@@ -64,7 +81,6 @@ body {
     border-radius: 0;
     overflow: hidden;
     transition: 0.4s;
-    height: 100%; /* Asegura que todas midan lo mismo en la fila */
 }
 
 .service-card img {
@@ -75,7 +91,12 @@ body {
     transition: 0.5s;
 }
 
-/* FORMULARIO */
+.service-card:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+/* FORMULARIO MINIMALISTA */
 .minimal-input {
     border: none;
     border-bottom: 1px solid var(--nude);
@@ -83,7 +104,12 @@ body {
     background: transparent;
     padding: 10px 0;
     font-size: 0.9rem;
-    width: 100%;
+}
+
+.minimal-input:focus {
+    box-shadow: none;
+    border-color: var(--gold);
+    background: transparent;
 }
 
 /* BOTONES */
@@ -95,41 +121,60 @@ body {
     letter-spacing: 2px;
     font-size: 0.8rem;
     font-weight: bold;
-    white-space: nowrap;
+}
+
+.btn-primary:hover {
+    background-color: var(--gold);
+}
+
+/* FOOTER */
+.social-link {
+    color: var(--nude);
+    font-size: 1.4rem;
+    transition: 0.3s;
+}
+
+.social-link:hover {
+    color: var(--gold);
 }
 
 /* =============================================
-   AJUSTES PARA MÓVILES (Media Queries)
+   AJUSTES RESPONSIVOS (MÓVIL)
    ============================================= */
 
 @media (max-width: 768px) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 80px 0;
+    }
+
     .dr-watermark {
-        font-size: 12rem; /* Tamaño mucho más pequeño para móvil */
+        font-size: 12rem;
     }
 
     .signature {
-        font-size: 3.5rem; /* Ajuste de la firma */
-        margin-top: -80px; /* Re-posicionamiento sobre el watermark */
+        font-size: 4rem;
+        margin-top: -100px;
     }
 
     .hero-tagline {
+        margin-top: 4rem;
         letter-spacing: 3px;
-        margin-top: 1.5rem;
+        font-size: 0.9rem;
     }
 
-    .hero {
-        height: auto;
-        min-height: 80vh;
+    .btn-primary {
+        padding: 12px 25px;
     }
 }
 
-/* Para pantallas muy pequeñas (iPhone SE, etc) */
-@media (max-width: 400px) {
+@media (max-width: 480px) {
     .dr-watermark {
-        font-size: 10rem;
+        font-size: 9rem;
     }
     .signature {
-        font-size: 2.8rem;
-        margin-top: -60px;
+        font-size: 3rem;
+        margin-top: -70px;
     }
 }
