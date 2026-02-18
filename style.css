@@ -127,8 +127,23 @@ body {
     background-color: var(--gold);
 }
 
-/* FOOTER */
+/* Espaciado exacto de 2rem entre los elementos del footer */
+.footer-gap {
+    gap: 2rem;
+}
+
+/* Forzamos que el párrafo no tenga margen inferior para que el alineado vertical sea matemático */
+footer p {
+    margin: 0 !important;
+    line-height: 1; /* Ayuda a que el centro del texto coincida con el centro del icono */
+}
+
+/* Alineación fina del icono de Instagram */
 .social-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    line-height: 0;
     color: var(--nude);
     font-size: 1.4rem;
     transition: 0.3s;
