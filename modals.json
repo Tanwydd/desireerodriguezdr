@@ -2,25 +2,25 @@
     "bbglow": {
         "titulo": "BB GLOW",
         "descripcion": "El tratamiento BB Glow es un procedimiento de rejuvenecimiento facial que utiliza tecnología de microneedling para introducir sueros con color y principios activos. Logra un efecto de 'maquillaje permanente' suave, difuminando imperfecciones, cerrando poros e iluminando la piel de forma inmediata.",
-        "antes": "img/bbglow-antes.jpg",
-        "despues": "img/bbglow-despues.jpg"
+        "antes": "img/bbglow-antes.png",
+        "despues": "img/bbglow-despues.png"
     },
     "micropigmentacion": {
         "titulo": "MICROPIGMENTACIÓN CAPILAR",
         "descripcion": "Técnica avanzada para simular el nacimiento del cabello en zonas con poca densidad o calvicie. Es la solución ideal para quienes buscan un aspecto de rapado natural o quieren disimular cicatrices en el cuero cabelludo mediante pigmentos específicos de alta calidad.",
-        "antes": "img/capilar-antes.jpg",
-        "despues": "img/capilar-despues.jpg"
+        "antes": "img/capilar-antes.png",
+        "despues": "img/capilar-despues.png"
     },
     "hilo": {
         "titulo": "HILO EGIPCIO",
         "descripcion": "La depilación con hilo egipcio permite extraer el vello desde la raíz con una precisión milimétrica. Es un método 100% natural, ideal para pieles sensibles, ya que no irrita ni utiliza químicos, permitiendo un diseño de cejas mucho más definido y duradero.",
-        "antes": "img/hilo-antes.jpg",
-        "despues": "img/hilo-despues.jpg"
+        "antes": "img/hilo-antes.png",
+        "despues": "img/hilo-despues.png"
     },
     "microblading": {
         "titulo": "MICROBLADING",
         "descripcion": "Tratamiento de arquitectura de cejas donde se dibujan pelos individuales de forma artística. Se realiza en la capa superficial de la dermis para corregir o reconstruir una ceja carente de pelo, logrando un aspecto hiperrealista, natural y adaptado a la morfología de tu rostro.",
-        "antes": "img/micro-antes.jpg",
-        "despues": "img/micro-despues.jpg"
+        "antes": "img/micro-antes.png",
+        "despues": "img/micro-despues.png"
     }
 }
