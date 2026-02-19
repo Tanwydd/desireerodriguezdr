@@ -46,28 +46,28 @@
         <h2 class="display-6 fw-light mb-5">TRATAMIENTOS</h2>
         <div class="row g-4">
             <div class="col-md-3 col-sm-6">
-                <div class="service-card shadow-sm">
+                <div class="service-card shadow-sm" data-id="bbglow" style="cursor: pointer;">
                     <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=500" alt="BB Glow">
                     <h3 class="h6 mt-3">BB GLOW</h3>
                     <p class="small text-muted p-2">Luminosidad y efecto porcelana inmediato.</p>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
-                <div class="service-card shadow-sm">
+                <div class="service-card shadow-sm" data-id="micropigmentacion" style="cursor: pointer;">
                     <img src="img/micropigmentacion.jpg" alt="Micropigmentación Capilar">
                     <h3 class="h6 mt-3">MICROPIGMENTACION CAPILAR</h3>
                     <p class="small text-muted p-2">Densidad y naturalidad avanzada.</p>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
-                <div class="service-card shadow-sm">
+                <div class="service-card shadow-sm" data-id="hilo" style="cursor: pointer;">
                     <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80&w=500" alt="Hilo">
                     <h3 class="h6 mt-3">HILO EGIPCIO</h3>
                     <p class="small text-muted p-2">Diseño de mirada con precisión extrema.</p>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
-                <div class="service-card shadow-sm">
+                <div class="service-card shadow-sm" data-id="microblading" style="cursor: pointer;">
                     <img src="img/microblading.webp" alt="Microblading">
                     <h3 class="h6 mt-3">MICROBLADING</h3>
                     <p class="small text-muted p-2">Cejas hiperrealistas trazo a trazo.</p>
@@ -104,6 +104,32 @@
         </a>
     </div>
     </footer>
+
+    <div class="modal fade" id="treatmentModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg">
+            <div class="modal-header border-0">
+                <h5 class="modal-title fw-light" id="modalTitulo" style="letter-spacing: 2px;"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <div class="row mb-4 text-center">
+                    <div class="col-6">
+                        <p class="small text-uppercase text-muted">Antes</p>
+                        <img id="imgAntes" src="" class="img-fluid rounded shadow-sm" alt="Antes">
+                    </div>
+                    <div class="col-6">
+                        <p class="small text-uppercase text-muted">Después</p>
+                        <img id="imgDespues" src="" class="img-fluid rounded shadow-sm" alt="Después">
+                    </div>
+                </div>
+                <div class="px-2">
+                    <p id="modalDescripcion" class="text-muted" style="line-height: 1.6;"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="main.js"></script>

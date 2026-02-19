@@ -60,4 +60,32 @@ $(document).ready(function() {
             }, 800);
         }
     });
+
+    // MODALES PARA TRATAMIENTOS
+    $('.service-card').on('click', async function() {
+        const tratamientoId = $(this).data('id'); // Obtiene bbglow, microblading, etc.
+        
+        try {
+            // Cargamos el archivo JSON
+            const response = await fetch('modals.json');
+            const datos = await response.json();
+            
+            // Seleccionamos el tratamiento específico
+            const info = datos[tratamientoId];
+
+            if (info) {
+                // Inyectamos el contenido en el modal
+                $('#modalTitulo').text(info.titulo);
+                $('#modalDescripcion').text(info.descripcion);
+                $('#imgAntes').attr('src', info.antes);
+                $('#imgDespues').attr('src', info.despues);
+
+                // Abrimos el modal (usando el objeto de Bootstrap)
+                const myModal = new bootstrap.Modal(document.getElementById('treatmentModal'));
+                myModal.show();
+            }
+        } catch (error) {
+            console.error("Error cargando la información del tratamiento:", error);
+        }
+    });
 });

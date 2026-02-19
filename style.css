@@ -81,6 +81,7 @@ body {
     border-radius: 0;
     overflow: hidden;
     transition: 0.4s;
+    cursor: pointer;
 }
 
 .service-card img {
