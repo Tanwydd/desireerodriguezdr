@@ -154,6 +154,29 @@ footer p {
     color: var(--gold);
 }
 
+/* EFECTOS DE APARTURA Y CIERRE DE MODALES*/
+/* Estado inicial: El modal está invisible y pequeño */
+.modal.fade .modal-dialog {
+    transform: scale(0.7); /* Empieza al 70% de su tamaño */
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); /* Efecto elástico "rebote" */
+}
+
+/* Estado final: Cuando el modal se muestra */
+.modal.show .modal-dialog {
+    transform: scale(1); /* Crece hasta su tamaño original */
+}
+
+/* Estilo extra para que el fondo (backdrop) sea más oscuro y elegante */
+.modal-backdrop.show {
+    opacity: 0.7;
+}
+
+/* Bordes redondeados y suaves para las imágenes del modal */
+.modal-content {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
 /* =============================================
    AJUSTES RESPONSIVOS (MÓVIL)
    ============================================= */
